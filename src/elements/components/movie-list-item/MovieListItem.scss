@@ -1,0 +1,46 @@
+@use '../../../styles/abstracts/main' as *;
+
+
+$fav-transition: 0.3s;
+
+.fav {
+
+  svg {
+    transition: fill $fav-transition, opacity $fav-transition;
+  }
+
+  &:hover {
+    svg {
+      transform: scale(1);
+      fill: $color-main;
+      opacity: 0.5;
+    }
+  }
+
+  &.is-active {
+    svg {
+      opacity: 1;
+      fill: $color-main;
+    }
+  }
+
+}
+
+.fav.is-active:not(.is-animated) svg {
+  animation: 0.35s forwards ease-out favAnimation;
+}
+
+@keyframes favAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2.25);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

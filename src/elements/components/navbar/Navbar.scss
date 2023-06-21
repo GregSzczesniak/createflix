@@ -1,0 +1,12 @@
+@use '../../../styles/abstracts/main' as *;
+
+$navbar-transition: 0.2s;
+
+.link {
+  color: $color-black;
+  transition: color $navbar-transition;
+
+  &:hover {
+    color: $color-main;
+  }
+}

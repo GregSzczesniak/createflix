@@ -1,0 +1,1 @@
+export const utilizeString = (string: string) => string.toString().replaceAll(/\s/g, '-').toLowerCase();
